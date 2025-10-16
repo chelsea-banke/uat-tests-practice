@@ -62,4 +62,8 @@ export class FormValidationPage{
           .should('exist')
           .contains(formValidationPageData.invalidPaymentText)
     }   
+
+    verifyValidationPagePath(){
+        cy.location('pathname').should('equal', formValidationPageData.pagePath)
+    }
 }

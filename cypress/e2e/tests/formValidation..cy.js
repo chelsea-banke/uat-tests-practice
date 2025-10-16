@@ -21,21 +21,21 @@ describe("form validation", ()=>{
         cy.get(formValidationPage.contactName).clear();
         formValidationPage.submitForm()
         formValidationPage.catchInvalidName()
-        ca.verifyLoginPath()
+        formValidationPage.verifyValidationPagePath()
     })
 
     it("fails with empty contact number field", ()=>{
         cy.get(formValidationPage.contactNumber).clear();
         formValidationPage.submitForm()
         formValidationPage.catchInvalidNumber()
-        ca.verifyLoginPath()
+        formValidationPage.verifyValidationPagePath()
     })
 
     it("fails with empty date field", ()=>{
         cy.get(formValidationPage.datePicker).clear();
         formValidationPage.submitForm()
         formValidationPage.catchInvalidDate()
-        ca.verifyLoginPath()
+        formValidationPage.verifyValidationPagePath()
     }) 
 
     
@@ -43,14 +43,14 @@ describe("form validation", ()=>{
         cy.get(formValidationPage.paymentSelector).invoke('val', '')
         formValidationPage.submitForm()
         formValidationPage.catchInvalidPayment()
-        ca.verifyLoginPath()
+        formValidationPage.verifyValidationPagePath()
     })
 
     it("fails with contact number field lacking '-' after the first three digits", ()=>{
         formValidationPage.enterContactNumber(testData.invalidData.number.withoutSeperator)
         formValidationPage.submitForm()
         formValidationPage.catchInvalidNumber()
-        ca.verifyLoginPath()
+        formValidationPage.verifyValidationPagePath()
     })
     
     it("fails with past date selected in date field", ()=>{
