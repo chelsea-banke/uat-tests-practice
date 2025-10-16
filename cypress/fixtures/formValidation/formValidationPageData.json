@@ -1,0 +1,7 @@
+{
+    "invalidNameText": "Please enter your Contact name.",
+    "invalidNumberText": "Please provide your Contact number.",
+    "invalidDateText": "Please provide valid Date.",
+    "invalidPaymentText": "Please select the Paymeny Method.",
+    "pagePath": "/form-validation"
+}
