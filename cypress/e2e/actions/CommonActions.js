@@ -15,16 +15,8 @@ export class CommonActions {
     }
 
     verifyValidation(){
-        this.verifyConfirmationPath()
+        confirmationPage.verifyConfirmationPagePath()
         cy.get(confirmationPage.confirmationTitle).should('exist').contains(confirmationPageData.confirmationTitleText)
         cy.get(confirmationPage.confirmationMessage).should('exist').contains(confirmationPageData.confirmationMessageText)
-    }
-
-    verifyLoginPath(){
-        cy.location('pathname').should('equal', '/form-validation')
-    }
-
-    verifyConfirmationPath(){
-        cy.location('pathname').should('equal', '/form-confirmation')
     }
 }

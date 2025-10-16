@@ -1,4 +1,5 @@
 {
     "confirmationTitleText": "Form Confirmation page for Automation Testing Practice",
-    "confirmationMessageText": "Thank you for validating your ticket"
+    "confirmationMessageText": "Thank you for validating your ticket",
+    "pagePath": "/form-confirmation"
 }
