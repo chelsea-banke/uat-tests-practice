@@ -1,0 +1,6 @@
+{
+    "path": "/login",
+    "failedLoginWarningText": "login failed please check credentails",
+    "emptyUsernameWarningText": "username is required",
+    "emptyPasswordWarningText": "password is required"
+}

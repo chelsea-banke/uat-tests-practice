@@ -1,0 +1,10 @@
+{
+    "ccAdmin": {
+        "username": "QA_Chelsea_Admin",
+        "password": "Chelsea@12345"
+    },
+    "badUser": {
+        "username": "qwerty",
+        "password": "123456"
+    }
+}
