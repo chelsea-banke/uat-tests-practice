@@ -1,20 +1,30 @@
 import { ConfirmationPage } from "../pages/ConfirmationPage";
 import { FormValidationPage } from "../pages/FormValidationPage";
+import testData from "../../fixtures/formValidation/formValidationTestData.json"
+import confirmationPageData from "../../fixtures/confirmationPageData.json"
 
 const formValidationPage = new FormValidationPage;
 const confirmationPage = new ConfirmationPage;
 
 export class CommonActions {
     fillValidationForm(){
-        formValidationPage.enterContactName("Chelsea");
-        formValidationPage.enterContactNumber("012-3456789");
-        formValidationPage.enterDate('2025-12-25');
-        formValidationPage.enterPayment('cashondelivery');
+        formValidationPage.enterContactName(testData.validData.name);
+        formValidationPage.enterContactNumber(testData.validData.number);
+        formValidationPage.enterDate(testData.validData.date);
+        formValidationPage.enterPayment(testData.validData.paymentMethond);
     }
 
     verifyValidation(){
+        this.verifyConfirmationPath()
+        cy.get(confirmationPage.confirmationTitle).should('exist').contains(confirmationPageData.confirmationTitleText)
+        cy.get(confirmationPage.confirmationMessage).should('exist').contains(confirmationPageData.confirmationMessageText)
+    }
+
+    verifyLoginPath(){
+        cy.location('pathname').should('equal', '/form-validation')
+    }
+
+    verifyConfirmationPath(){
         cy.location('pathname').should('equal', '/form-confirmation')
-        cy.get(confirmationPage.confirmationTitle).should('exist').contains(confirmationPage.confirmationTitleText)
-        cy.get(confirmationPage.confirmationMessage).should('exist').contains(confirmationPage.confirmationMessageText)
     }
 }

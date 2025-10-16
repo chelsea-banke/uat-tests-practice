@@ -1,0 +1,16 @@
+{
+    "validData": {
+        "name": "Chelsea",
+        "number": "123-4567890",
+        "date": "2025-12-25",
+        "paymentMethond": "cashondelivery"
+    },
+    "invalidData": {
+        "number": {
+            "withoutSeperator": "123456789"
+        },
+        "date": {
+            "pastDate": "2024-12-25"
+        }
+    }
+}
