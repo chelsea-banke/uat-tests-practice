@@ -11,7 +11,7 @@ describe("login into mbp", ()=>{
         cy.visit(loginData.path)
     })
 
-    it.only("passes for valid credentials", ()=>{
+    it("passes for valid credentials", ()=>{
         loginPage.loginAsCCAdmin()
     })
 
@@ -21,7 +21,7 @@ describe("login into mbp", ()=>{
         loginPage.clickLogin()
         loginPage.catchFailedLogin()
         loginPage.enterUsername(null)
-        ca.verifyExistence(loginPage.emptyUsernameWarning, loginData.emptyUsernameWarningText)
+        ca.verifyExistence(loginPage.empty_username_warning_identifier, loginData.emptyUsernameWarningText)
     })
 
     it("fails to login with wrong password", ()=>{
@@ -30,6 +30,6 @@ describe("login into mbp", ()=>{
         loginPage.clickLogin()
         loginPage.catchFailedLogin()
         loginPage.enterPassword(null)
-        ca.verifyExistence(loginPage.emptyPasswordWarning, loginData.emptyPasswordWarningText)
+        ca.verifyExistence(loginPage.empty_password_warning_identifier, loginData.emptyPasswordWarningText)
     })
 })

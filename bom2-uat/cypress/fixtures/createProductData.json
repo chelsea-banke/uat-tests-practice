@@ -1,0 +1,18 @@
+{
+    "testData": {
+        "name": "Automation Software",
+        "price": 20000,
+        "reference": "Automation Software",
+        "description": "Automation Software",
+        "quantity": 2,
+        "files": [
+            "cypress/fixtures/assets/img1.png",
+            "cypress/fixtures/assets/img2.png",
+            "cypress/fixtures/assets/img3.png",
+            "cypress/fixtures/assets/img4.png",
+            "cypress/fixtures/assets/img5.png",
+            "cypress/fixtures/assets/img6.png",
+            "cypress/fixtures/assets/img7.png"
+        ]
+    }
+}

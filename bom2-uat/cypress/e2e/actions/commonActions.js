@@ -18,4 +18,8 @@ export class ComminActions{
           cy.get(identifier).contains(content)
       }
     }
+
+    uploadFiles(identifier, files){
+        cy.get(identifier).selectFile(files, { force: true });
+    }
 }

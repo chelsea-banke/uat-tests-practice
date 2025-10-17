@@ -5,23 +5,23 @@ import loginData from "../../fixtures/loginData.json"
 const ca = new ComminActions
 
 export class LoginPage{
-    username = '[name="username"]'
-    password = '[name="password"]'
-    grayedLoginButton = '#root div.css-h5fkc8'
-    loginButton = '[data-testid="Sign-In"]'
-    wrongCredentialsWarning = '#root div:nth-child(2) > div.RaNotification-error > div.css-1w0ym84'
-    emptyUsernameWarning = '#\\:r3\\:-helper-text'
-    emptyPasswordWarning = '#\\:r5\\:-helper-text'
+    username_identifier = '[name="username"]'
+    password_identifier = '[name="password"]'
+    grayed_login_button_identifier = '#root div.css-h5fkc8'
+    login_button_identifier = '[data-testid="Sign-In"]'
+    wrong_credentials_warning_identifier = '#root div:nth-child(2) > div.RaNotification-error > div.css-1w0ym84'
+    empty_username_warning_identifier = '#\\:r3\\:-helper-text'
+    empty_password_warning_identifier = '#\\:r5\\:-helper-text'
 
-    enterUsername(value=null){
-        ca.fillField(this.username, value)
+    enterUsername(value){
+        ca.fillField(this.username_identifier, value)
     }
-    enterPassword(value=null){
-        ca.fillField(this.password, value)
+    enterPassword(value){
+        ca.fillField(this.password_identifier, value)
     }
 
     clickLogin(){
-        ca.clickElement(this.loginButton)
+        ca.clickElement(this.login_button_identifier)
     }
 
     loginAsCCAdmin(){
@@ -33,6 +33,6 @@ export class LoginPage{
 
     catchFailedLogin(){
         cy.location('pathname').should('equal', loginData.path)
-        ca.verifyExistence(this.wrongCredentialsWarning, loginData.failedLoginWarningText)
+        ca.verifyExistence(this.wrong_credentials_warning_identifier, loginData.failedLoginWarningText)
     }
 }
