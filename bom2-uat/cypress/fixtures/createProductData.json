@@ -1,4 +1,5 @@
 {
+    "path": "/product/create",
     "testData": {
         "name": "Automation Software",
         "price": 20000,

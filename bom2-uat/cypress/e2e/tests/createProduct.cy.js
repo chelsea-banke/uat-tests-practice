@@ -22,7 +22,7 @@ describe('new product creation', { testIsolation: false }, ()=>{
     })
 
     afterEach(()=>{
-        cy.visit('/product/create')
+        cy.visit(createProductData.path)
     })
 
     it('passes creation of new product with valid fields', ()=>{
